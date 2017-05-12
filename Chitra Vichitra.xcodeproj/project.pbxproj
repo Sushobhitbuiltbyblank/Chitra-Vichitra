@@ -1,0 +1,321 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2BEBA3001EC5A9C70037DD56 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BEBA2FF1EC5A9C70037DD56 /* main.m */; };
+		2BEBA3031EC5A9C70037DD56 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BEBA3021EC5A9C70037DD56 /* AppDelegate.m */; };
+		2BEBA3061EC5A9C70037DD56 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BEBA3051EC5A9C70037DD56 /* ViewController.m */; };
+		2BEBA3091EC5A9C70037DD56 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BEBA3071EC5A9C70037DD56 /* Main.storyboard */; };
+		2BEBA30B1EC5A9C70037DD56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BEBA30A1EC5A9C70037DD56 /* Assets.xcassets */; };
+		2BEBA30E1EC5A9C70037DD56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BEBA30C1EC5A9C70037DD56 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2BEBA2FB1EC5A9C70037DD56 /* Chitra Vichitra.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Chitra Vichitra.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2BEBA2FF1EC5A9C70037DD56 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2BEBA3011EC5A9C70037DD56 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		2BEBA3021EC5A9C70037DD56 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		2BEBA3041EC5A9C70037DD56 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		2BEBA3051EC5A9C70037DD56 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		2BEBA3081EC5A9C70037DD56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2BEBA30A1EC5A9C70037DD56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2BEBA30D1EC5A9C70037DD56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2BEBA30F1EC5A9C70037DD56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2BEBA2F81EC5A9C70037DD56 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2BEBA2F21EC5A9C70037DD56 = {
+			isa = PBXGroup;
+			children = (
+				2BEBA2FD1EC5A9C70037DD56 /* Chitra Vichitra */,
+				2BEBA2FC1EC5A9C70037DD56 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2BEBA2FC1EC5A9C70037DD56 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2BEBA2FB1EC5A9C70037DD56 /* Chitra Vichitra.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2BEBA2FD1EC5A9C70037DD56 /* Chitra Vichitra */ = {
+			isa = PBXGroup;
+			children = (
+				2BEBA3011EC5A9C70037DD56 /* AppDelegate.h */,
+				2BEBA3021EC5A9C70037DD56 /* AppDelegate.m */,
+				2BEBA3041EC5A9C70037DD56 /* ViewController.h */,
+				2BEBA3051EC5A9C70037DD56 /* ViewController.m */,
+				2BEBA3071EC5A9C70037DD56 /* Main.storyboard */,
+				2BEBA30A1EC5A9C70037DD56 /* Assets.xcassets */,
+				2BEBA30C1EC5A9C70037DD56 /* LaunchScreen.storyboard */,
+				2BEBA30F1EC5A9C70037DD56 /* Info.plist */,
+				2BEBA2FE1EC5A9C70037DD56 /* Supporting Files */,
+			);
+			path = "Chitra Vichitra";
+			sourceTree = "<group>";
+		};
+		2BEBA2FE1EC5A9C70037DD56 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2BEBA2FF1EC5A9C70037DD56 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2BEBA2FA1EC5A9C70037DD56 /* Chitra Vichitra */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2BEBA3121EC5A9C70037DD56 /* Build configuration list for PBXNativeTarget "Chitra Vichitra" */;
+			buildPhases = (
+				2BEBA2F71EC5A9C70037DD56 /* Sources */,
+				2BEBA2F81EC5A9C70037DD56 /* Frameworks */,
+				2BEBA2F91EC5A9C70037DD56 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Chitra Vichitra";
+			productName = "Chitra Vichitra";
+			productReference = 2BEBA2FB1EC5A9C70037DD56 /* Chitra Vichitra.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2BEBA2F31EC5A9C70037DD56 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = builtbyblank;
+				TargetAttributes = {
+					2BEBA2FA1EC5A9C70037DD56 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = GXTXWHR532;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 2BEBA2F61EC5A9C70037DD56 /* Build configuration list for PBXProject "Chitra Vichitra" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2BEBA2F21EC5A9C70037DD56;
+			productRefGroup = 2BEBA2FC1EC5A9C70037DD56 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2BEBA2FA1EC5A9C70037DD56 /* Chitra Vichitra */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2BEBA2F91EC5A9C70037DD56 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2BEBA30E1EC5A9C70037DD56 /* LaunchScreen.storyboard in Resources */,
+				2BEBA30B1EC5A9C70037DD56 /* Assets.xcassets in Resources */,
+				2BEBA3091EC5A9C70037DD56 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2BEBA2F71EC5A9C70037DD56 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2BEBA3061EC5A9C70037DD56 /* ViewController.m in Sources */,
+				2BEBA3031EC5A9C70037DD56 /* AppDelegate.m in Sources */,
+				2BEBA3001EC5A9C70037DD56 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		2BEBA3071EC5A9C70037DD56 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2BEBA3081EC5A9C70037DD56 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2BEBA30C1EC5A9C70037DD56 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2BEBA30D1EC5A9C70037DD56 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2BEBA3101EC5A9C70037DD56 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2BEBA3111EC5A9C70037DD56 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2BEBA3131EC5A9C70037DD56 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = GXTXWHR532;
+				INFOPLIST_FILE = "Chitra Vichitra/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.builtbyblank.Chitra-Vichitra";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		2BEBA3141EC5A9C70037DD56 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = GXTXWHR532;
+				INFOPLIST_FILE = "Chitra Vichitra/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.builtbyblank.Chitra-Vichitra";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2BEBA2F61EC5A9C70037DD56 /* Build configuration list for PBXProject "Chitra Vichitra" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2BEBA3101EC5A9C70037DD56 /* Debug */,
+				2BEBA3111EC5A9C70037DD56 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2BEBA3121EC5A9C70037DD56 /* Build configuration list for PBXNativeTarget "Chitra Vichitra" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2BEBA3131EC5A9C70037DD56 /* Debug */,
+				2BEBA3141EC5A9C70037DD56 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2BEBA2F31EC5A9C70037DD56 /* Project object */;
+}
