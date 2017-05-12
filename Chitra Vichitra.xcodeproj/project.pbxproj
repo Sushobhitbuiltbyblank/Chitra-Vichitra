@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E7514417BC7D337134167FB /* libPods-Chitra Vichitra.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 90A2BD3574879A62249E1386 /* libPods-Chitra Vichitra.a */; };
 		2BEBA3001EC5A9C70037DD56 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BEBA2FF1EC5A9C70037DD56 /* main.m */; };
 		2BEBA3031EC5A9C70037DD56 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BEBA3021EC5A9C70037DD56 /* AppDelegate.m */; };
-		2BEBA3061EC5A9C70037DD56 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BEBA3051EC5A9C70037DD56 /* ViewController.m */; };
 		2BEBA3091EC5A9C70037DD56 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BEBA3071EC5A9C70037DD56 /* Main.storyboard */; };
 		2BEBA30B1EC5A9C70037DD56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BEBA30A1EC5A9C70037DD56 /* Assets.xcassets */; };
 		2BEBA30E1EC5A9C70037DD56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BEBA30C1EC5A9C70037DD56 /* LaunchScreen.storyboard */; };
+		2BEBA31D1EC5AA8A0037DD56 /* CameraVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BEBA31A1EC5AA8A0037DD56 /* CameraVC.m */; };
+		2BEBA31E1EC5AA8A0037DD56 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BEBA31C1EC5AA8A0037DD56 /* ViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,12 +22,17 @@
 		2BEBA2FF1EC5A9C70037DD56 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2BEBA3011EC5A9C70037DD56 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2BEBA3021EC5A9C70037DD56 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		2BEBA3041EC5A9C70037DD56 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		2BEBA3051EC5A9C70037DD56 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		2BEBA3081EC5A9C70037DD56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2BEBA30A1EC5A9C70037DD56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2BEBA30D1EC5A9C70037DD56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2BEBA30F1EC5A9C70037DD56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2BEBA3191EC5AA8A0037DD56 /* CameraVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraVC.h; sourceTree = "<group>"; };
+		2BEBA31A1EC5AA8A0037DD56 /* CameraVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraVC.m; sourceTree = "<group>"; };
+		2BEBA31B1EC5AA8A0037DD56 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		2BEBA31C1EC5AA8A0037DD56 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		90A2BD3574879A62249E1386 /* libPods-Chitra Vichitra.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Chitra Vichitra.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B084A5759235D805FDE3C279 /* Pods-Chitra Vichitra.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chitra Vichitra.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Chitra Vichitra/Pods-Chitra Vichitra.debug.xcconfig"; sourceTree = "<group>"; };
+		FC2235BF14F5DD95A943900F /* Pods-Chitra Vichitra.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chitra Vichitra.release.xcconfig"; path = "Pods/Target Support Files/Pods-Chitra Vichitra/Pods-Chitra Vichitra.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E7514417BC7D337134167FB /* libPods-Chitra Vichitra.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +52,8 @@
 			children = (
 				2BEBA2FD1EC5A9C70037DD56 /* Chitra Vichitra */,
 				2BEBA2FC1EC5A9C70037DD56 /* Products */,
+				CE0C0B6F513A8356030E9ACC /* Pods */,
+				9B1B941343F0FDDE03E23C30 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,10 +68,9 @@
 		2BEBA2FD1EC5A9C70037DD56 /* Chitra Vichitra */ = {
 			isa = PBXGroup;
 			children = (
+				2BEBA3181EC5AA8A0037DD56 /* VC */,
 				2BEBA3011EC5A9C70037DD56 /* AppDelegate.h */,
 				2BEBA3021EC5A9C70037DD56 /* AppDelegate.m */,
-				2BEBA3041EC5A9C70037DD56 /* ViewController.h */,
-				2BEBA3051EC5A9C70037DD56 /* ViewController.m */,
 				2BEBA3071EC5A9C70037DD56 /* Main.storyboard */,
 				2BEBA30A1EC5A9C70037DD56 /* Assets.xcassets */,
 				2BEBA30C1EC5A9C70037DD56 /* LaunchScreen.storyboard */,
@@ -79,6 +88,34 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		2BEBA3181EC5AA8A0037DD56 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				2BEBA3191EC5AA8A0037DD56 /* CameraVC.h */,
+				2BEBA31A1EC5AA8A0037DD56 /* CameraVC.m */,
+				2BEBA31B1EC5AA8A0037DD56 /* ViewController.h */,
+				2BEBA31C1EC5AA8A0037DD56 /* ViewController.m */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		9B1B941343F0FDDE03E23C30 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				90A2BD3574879A62249E1386 /* libPods-Chitra Vichitra.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CE0C0B6F513A8356030E9ACC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B084A5759235D805FDE3C279 /* Pods-Chitra Vichitra.debug.xcconfig */,
+				FC2235BF14F5DD95A943900F /* Pods-Chitra Vichitra.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -86,9 +123,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2BEBA3121EC5A9C70037DD56 /* Build configuration list for PBXNativeTarget "Chitra Vichitra" */;
 			buildPhases = (
+				1F30E1C0E0C2E98A704D7D1F /* [CP] Check Pods Manifest.lock */,
 				2BEBA2F71EC5A9C70037DD56 /* Sources */,
 				2BEBA2F81EC5A9C70037DD56 /* Frameworks */,
 				2BEBA2F91EC5A9C70037DD56 /* Resources */,
+				50B7FD2EC562F6613F2DD1A0 /* [CP] Embed Pods Frameworks */,
+				B38EB510CF9C1F9D058E8142 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -146,13 +186,62 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1F30E1C0E0C2E98A704D7D1F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		50B7FD2EC562F6613F2DD1A0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Chitra Vichitra/Pods-Chitra Vichitra-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B38EB510CF9C1F9D058E8142 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Chitra Vichitra/Pods-Chitra Vichitra-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2BEBA2F71EC5A9C70037DD56 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2BEBA3061EC5A9C70037DD56 /* ViewController.m in Sources */,
+				2BEBA31E1EC5AA8A0037DD56 /* ViewController.m in Sources */,
 				2BEBA3031EC5A9C70037DD56 /* AppDelegate.m in Sources */,
+				2BEBA31D1EC5AA8A0037DD56 /* CameraVC.m in Sources */,
 				2BEBA3001EC5A9C70037DD56 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -273,6 +362,7 @@
 		};
 		2BEBA3131EC5A9C70037DD56 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B084A5759235D805FDE3C279 /* Pods-Chitra Vichitra.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = GXTXWHR532;
@@ -285,6 +375,7 @@
 		};
 		2BEBA3141EC5A9C70037DD56 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC2235BF14F5DD95A943900F /* Pods-Chitra Vichitra.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = GXTXWHR532;

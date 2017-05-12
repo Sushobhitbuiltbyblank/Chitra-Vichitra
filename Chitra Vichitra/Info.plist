@@ -41,5 +41,11 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>This App need your permission to take photos and videos</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>This App need your permission to record sound with vidoes</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>This App need your permission to choose media from gallery</string>
 </dict>
 </plist>
