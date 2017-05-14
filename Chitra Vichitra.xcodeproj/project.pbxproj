@@ -405,6 +405,7 @@
 				2BEBA3141EC5A9C70037DD56 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

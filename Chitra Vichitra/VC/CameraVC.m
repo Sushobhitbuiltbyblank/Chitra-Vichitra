@@ -131,15 +131,18 @@ typedef enum {
     GPUIMAGE_NUMFILTERS
 } GPUImageShowcaseFilterType;
 
-@interface CameraVC ()<GPUImageVideoCameraDelegate>{
+@interface CameraVC ()<GPUImageVideoCameraDelegate, UICollectionViewDelegate,UICollectionViewDataSource>{
     GPUImageVideoCamera *videoCamera;
     GPUImageOutput<GPUImageInput> *filter;
     GPUImagePicture *sourcePicture;
     GPUImageShowcaseFilterType filterType;
     GPUImageUIElement *uiElementInput;
     GPUImageFilterPipeline *pipeline;
+    NSString *identifer;
+    NSArray *filters;
 }
 @property (weak, nonatomic) IBOutlet GPUImageView *filterView;
+@property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
 
 @end
 
@@ -198,6 +201,11 @@ typedef enum {
     [filter addTarget:filterView];
     [videoCamera addTarget:filter];
     [videoCamera startCameraCapture];
+    
+    //Identifier for collectionview cell
+    identifer = @"filterCell";
+    filters = [NSArray arrayWithObjects:@"angry_birds_cake.jpg", @"creme_brelee.jpg", @"egg_benedict.jpg", @"full_breakfast.jpg", @"green_tea.jpg", @"ham_and_cheese_panini.jpg", @"ham_and_egg_sandwich.jpg", @"hamburger.jpg", @"instant_noodle_with_egg.jpg", @"japanese_noodle_with_pork.jpg", @"mushroom_risotto.jpg", @"noodle_with_bbq_pork.jpg", @"starbucks_coffee.jpg", @"thai_shrimp_cake.jpg", @"vegetable_curry.jpg", @"white_chocolate_donut.jpg", nil];
+    
 }
 
 -(void)changeFilter:(GPUImageShowcaseFilterType) filterName
@@ -226,6 +234,20 @@ typedef enum {
 - (IBAction)changeFilterAction:(id)sender {
     [self changeFilter:GPUIMAGE_KUWAHARA];
 }
+
+#pragma mark - CollectionView method
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return filters.count;
+}
+
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifer forIndexPath:indexPath];
+    
+    return cell;
+}
+
 
 /*
 #pragma mark - Navigation
