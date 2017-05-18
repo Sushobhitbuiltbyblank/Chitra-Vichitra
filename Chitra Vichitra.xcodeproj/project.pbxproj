@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		1E7514417BC7D337134167FB /* libPods-Chitra Vichitra.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 90A2BD3574879A62249E1386 /* libPods-Chitra Vichitra.a */; };
+		2BA05B611ECD73CF00DEB0F9 /* FrameCVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA05B601ECD73CF00DEB0F9 /* FrameCVCell.m */; };
+		2BA05B671ECD81A600DEB0F9 /* mask.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BA05B631ECD81A600DEB0F9 /* mask.png */; };
+		2BA05B681ECD81A600DEB0F9 /* WID-small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2BA05B641ECD81A600DEB0F9 /* WID-small.jpg */; };
+		2BA05B691ECD81A600DEB0F9 /* CustomFilter.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 2BA05B661ECD81A600DEB0F9 /* CustomFilter.fsh */; };
+		2BA05B6D1ECDC5F700DEB0F9 /* CaptureImageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA05B6C1ECDC5F700DEB0F9 /* CaptureImageVC.m */; };
 		2BEBA3001EC5A9C70037DD56 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BEBA2FF1EC5A9C70037DD56 /* main.m */; };
 		2BEBA3031EC5A9C70037DD56 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BEBA3021EC5A9C70037DD56 /* AppDelegate.m */; };
 		2BEBA3091EC5A9C70037DD56 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BEBA3071EC5A9C70037DD56 /* Main.storyboard */; };
@@ -18,6 +23,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2BA05B5F1ECD73CF00DEB0F9 /* FrameCVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FrameCVCell.h; sourceTree = "<group>"; };
+		2BA05B601ECD73CF00DEB0F9 /* FrameCVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FrameCVCell.m; sourceTree = "<group>"; };
+		2BA05B631ECD81A600DEB0F9 /* mask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mask.png; sourceTree = "<group>"; };
+		2BA05B641ECD81A600DEB0F9 /* WID-small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "WID-small.jpg"; sourceTree = "<group>"; };
+		2BA05B661ECD81A600DEB0F9 /* CustomFilter.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = CustomFilter.fsh; sourceTree = "<group>"; };
+		2BA05B6B1ECDC5F700DEB0F9 /* CaptureImageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaptureImageVC.h; sourceTree = "<group>"; };
+		2BA05B6C1ECDC5F700DEB0F9 /* CaptureImageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaptureImageVC.m; sourceTree = "<group>"; };
 		2BEBA2FB1EC5A9C70037DD56 /* Chitra Vichitra.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Chitra Vichitra.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BEBA2FF1EC5A9C70037DD56 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2BEBA3011EC5A9C70037DD56 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -47,6 +59,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2BA05B5E1ECD72B500DEB0F9 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				2BA05B5F1ECD73CF00DEB0F9 /* FrameCVCell.h */,
+				2BA05B601ECD73CF00DEB0F9 /* FrameCVCell.m */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
+		2BA05B621ECD81A600DEB0F9 /* assets */ = {
+			isa = PBXGroup;
+			children = (
+				2BA05B631ECD81A600DEB0F9 /* mask.png */,
+				2BA05B641ECD81A600DEB0F9 /* WID-small.jpg */,
+			);
+			path = assets;
+			sourceTree = "<group>";
+		};
+		2BA05B651ECD81A600DEB0F9 /* files */ = {
+			isa = PBXGroup;
+			children = (
+				2BA05B661ECD81A600DEB0F9 /* CustomFilter.fsh */,
+			);
+			path = files;
+			sourceTree = "<group>";
+		};
 		2BEBA2F21EC5A9C70037DD56 = {
 			isa = PBXGroup;
 			children = (
@@ -68,6 +106,9 @@
 		2BEBA2FD1EC5A9C70037DD56 /* Chitra Vichitra */ = {
 			isa = PBXGroup;
 			children = (
+				2BA05B621ECD81A600DEB0F9 /* assets */,
+				2BA05B651ECD81A600DEB0F9 /* files */,
+				2BA05B5E1ECD72B500DEB0F9 /* CustomView */,
 				2BEBA3181EC5AA8A0037DD56 /* VC */,
 				2BEBA3011EC5A9C70037DD56 /* AppDelegate.h */,
 				2BEBA3021EC5A9C70037DD56 /* AppDelegate.m */,
@@ -95,6 +136,8 @@
 				2BEBA31A1EC5AA8A0037DD56 /* CameraVC.m */,
 				2BEBA31B1EC5AA8A0037DD56 /* ViewController.h */,
 				2BEBA31C1EC5AA8A0037DD56 /* ViewController.m */,
+				2BA05B6B1ECDC5F700DEB0F9 /* CaptureImageVC.h */,
+				2BA05B6C1ECDC5F700DEB0F9 /* CaptureImageVC.m */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -178,9 +221,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BA05B691ECD81A600DEB0F9 /* CustomFilter.fsh in Resources */,
 				2BEBA30E1EC5A9C70037DD56 /* LaunchScreen.storyboard in Resources */,
 				2BEBA30B1EC5A9C70037DD56 /* Assets.xcassets in Resources */,
 				2BEBA3091EC5A9C70037DD56 /* Main.storyboard in Resources */,
+				2BA05B671ECD81A600DEB0F9 /* mask.png in Resources */,
+				2BA05B681ECD81A600DEB0F9 /* WID-small.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,6 +286,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2BEBA31E1EC5AA8A0037DD56 /* ViewController.m in Sources */,
+				2BA05B6D1ECDC5F700DEB0F9 /* CaptureImageVC.m in Sources */,
+				2BA05B611ECD73CF00DEB0F9 /* FrameCVCell.m in Sources */,
 				2BEBA3031EC5A9C70037DD56 /* AppDelegate.m in Sources */,
 				2BEBA31D1EC5AA8A0037DD56 /* CameraVC.m in Sources */,
 				2BEBA3001EC5A9C70037DD56 /* main.m in Sources */,
