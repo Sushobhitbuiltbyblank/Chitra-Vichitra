@@ -11,21 +11,26 @@
 #import <CoreImage/CoreImage.h>
 #import "FrameCVCell.h"
 #import "CaptureImageVC.h"
-
-@interface CameraVC ()<UICollectionViewDelegate,UICollectionViewDataSource>{
+#import <MobileCoreServices/MobileCoreServices.h>
+@interface CameraVC ()<UICollectionViewDelegate,UICollectionViewDataSource,UINavigationControllerDelegate, UIImagePickerControllerDelegate>{
     GPUImageStillCamera *videoCamera;
     GPUImageOutput<GPUImageInput> *filter;
-    GPUImagePicture *sourcePicture;
     GPUImageShowcaseFilterType filterType;
     GPUImageUIElement *uiElementInput;
     GPUImageFilterPipeline *pipeline;
+    GPUImagePicture *stillImageSource;
     UIImage *captureImage;
     NSString *identifer;
     UIView *touchView;
+    UIImage *origonalImage;
 }
 @property (weak, nonatomic) IBOutlet UISlider *filterSettingsSlider;
 @property (weak, nonatomic) IBOutlet GPUImageView *filterView;
 @property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bVBottomC;
+@property (nonatomic, strong) UIImagePickerController* imagePicker;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *galleryBtn;
+@property (weak, nonatomic) IBOutlet GPUImageView *otherView;
 
 @end
 
@@ -67,14 +72,14 @@
 }
 
 
-- (id)initWithFilterType:(GPUImageShowcaseFilterType)newFilterType
-{
-    if (self)
-    {
-        filterType = newFilterType;
-    }
-    return self;
-}
+//- (id)initWithFilterType:(GPUImageShowcaseFilterType)newFilterType
+//{
+//    if (self)
+//    {
+//        filterType = newFilterType;
+//    }
+//    return self;
+//}
 
 - (void)setupFilter
 {
@@ -88,14 +93,28 @@
     
     //Identifier for collectionview cell
     identifer = @"filterCell";
+    // Still image source processer.
 }
 
 -(void)changeFilter: (GPUImageOutput<GPUImageInput> *)selectedfilter
 {
-    [videoCamera removeAllTargets];
-    [videoCamera addTarget:selectedfilter];
-    GPUImageView *filterView = (GPUImageView *)self.filterView;
-    [filter addTarget:filterView];
+   
+    if (self.filterView.isHidden){
+        GPUImageView *filterView = (GPUImageView *)self.otherView;
+        [selectedfilter addTarget:filterView];
+        stillImageSource = [[GPUImagePicture alloc] initWithImage:captureImage];
+        [stillImageSource addTarget:selectedfilter];
+//        [selectedfilter useNextFrameForImageCapture];
+        [stillImageSource processImage];
+//        captureImage = [selectedfilter imageFromCurrentFramebuffer];
+        captureImage = [selectedfilter imageByFilteringImage:captureImage];
+    }
+    else{
+        [videoCamera removeAllTargets];
+        [videoCamera addTarget:selectedfilter];
+        GPUImageView *filterView = (GPUImageView *)self.filterView;
+        [selectedfilter addTarget:filterView];
+    }
 }
 #pragma mark  - button Action
 - (IBAction)SwitchCamera:(id)sender {
@@ -112,11 +131,59 @@
     [videoCamera capturePhotoAsImageProcessedUpToFilter:filter withCompletionHandler:^(UIImage *processedImage, NSError *error)
      {
          captureImage = processedImage;
-         [self performSegueWithIdentifier:@"gotoCaptureImageVC" sender:sender];
+         origonalImage = captureImage;
+         self.filterView.hidden = YES;
+         filter = [[GPUImageFilter alloc]init];
+         [self changeFilter:filter];
+         self.filterSettingsSlider.hidden = YES;
+//         [self performSegueWithIdentifier:@"gotoCaptureImageVC" sender:sender];
 //         UIImageWriteToSavedPhotosAlbum(processedImage, self, nil, nil);
      }];
 }
+- (IBAction)settingAction:(id)sender {
+    [self showHideview];
+}
+- (IBAction)resetAction:(id)sender {
+    filter = [[GPUImageFilter alloc]init];
+    captureImage = origonalImage;
+    [self changeFilter:filter];
+    self.filterSettingsSlider.hidden = true;
+}
+- (IBAction)openGallery:(id)sender {
+    self.imagePicker = [[UIImagePickerController alloc] init];
+    self.imagePicker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+    
+    // Displays saved pictures and movies, if both are available, from the
+    // Camera Roll album.
+    self.imagePicker.mediaTypes = @[(NSString *)kUTTypeImage];
+    //    [UIImagePickerController availableMediaTypesForSourceType:
+    //     UIImagePickerControllerSourceTypeSavedPhotosAlbum];
+    
+    // Hides the controls for moving & scaling pictures, or for
+    // trimming movies. To instead show the controls, use YES.
+    self.imagePicker.allowsEditing = NO;
+    
+    self.imagePicker.delegate = self;
+    
+    [self presentViewController:self.imagePicker animated:YES completion:nil];
 
+}
+
+-(void)showHideview{
+    [self.view layoutIfNeeded];
+    if (self.bVBottomC.constant == 0){
+        self.bVBottomC.constant = -100;
+        [UIView animateWithDuration:.5 animations:^{
+            [self.view layoutIfNeeded]; // Called on parent view
+        }];
+    }
+    else{
+        self.bVBottomC.constant = 0;
+        [UIView animateWithDuration:.5 animations:^{
+            [self.view layoutIfNeeded]; // Called on parent view
+        }];
+    }
+}
 
 
 #pragma mark - CollectionView method
@@ -216,7 +283,7 @@
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    
+    [self showHideview];
     filterType = (GPUImageShowcaseFilterType) indexPath.row;
     switch (indexPath.row)
     {
@@ -1183,6 +1250,7 @@
         }; break;
         default: break;
     }
+     [stillImageSource processImage];
 }
 
 
@@ -1258,5 +1326,42 @@
 }
 
 @synthesize filterSettingsSlider = _filterSettingsSlider;
+# pragma mark - imagePicker Delegate method
+// For responding to the user tapping Cancel.
+- (void) imagePickerControllerDidCancel: (UIImagePickerController *) picker {
+    
+    [self.imagePicker dismissViewControllerAnimated:YES completion:nil];
+    self.imagePicker =nil;
+}
+
+// For responding to the user accepting a newly-captured picture or movie
+- (void) imagePickerController: (UIImagePickerController *) picker
+ didFinishPickingMediaWithInfo: (NSDictionary *) info {
+    
+    NSString *mediaType = [info objectForKey: UIImagePickerControllerMediaType];
+    UIImage *originalImage, *editedImage, *resultImage;
+    
+    if (CFStringCompare ((CFStringRef) mediaType, kUTTypeImage, 0)
+        == kCFCompareEqualTo) {
+        
+        editedImage = (UIImage *) [info objectForKey:
+                                   UIImagePickerControllerEditedImage];
+        originalImage = (UIImage *) [info objectForKey:
+                                     UIImagePickerControllerOriginalImage];
+        
+        if (editedImage) {
+            resultImage = editedImage;
+        } else {
+            resultImage = originalImage;
+        }
+    }
+    captureImage = resultImage;
+    origonalImage = captureImage;
+    self.filterView.hidden = YES;
+    filter = [[GPUImageFilter alloc]init];
+    [self changeFilter:filter];
+    [self.imagePicker dismissViewControllerAnimated:YES completion:nil];
+    self.imagePicker = nil;
+}
 
 @end
