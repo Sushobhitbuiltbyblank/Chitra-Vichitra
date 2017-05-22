@@ -20,6 +20,7 @@
 		2BEBA30E1EC5A9C70037DD56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BEBA30C1EC5A9C70037DD56 /* LaunchScreen.storyboard */; };
 		2BEBA31D1EC5AA8A0037DD56 /* CameraVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BEBA31A1EC5AA8A0037DD56 /* CameraVC.m */; };
 		2BEBA31E1EC5AA8A0037DD56 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BEBA31C1EC5AA8A0037DD56 /* ViewController.m */; };
+		DE33E72F1ED35D1C0005EB0E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE33E72E1ED35D1C0005EB0E /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		2BEBA31C1EC5AA8A0037DD56 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		90A2BD3574879A62249E1386 /* libPods-Chitra Vichitra.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Chitra Vichitra.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B084A5759235D805FDE3C279 /* Pods-Chitra Vichitra.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chitra Vichitra.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Chitra Vichitra/Pods-Chitra Vichitra.debug.xcconfig"; sourceTree = "<group>"; };
+		DE33E72E1ED35D1C0005EB0E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "Google File/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FC2235BF14F5DD95A943900F /* Pods-Chitra Vichitra.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chitra Vichitra.release.xcconfig"; path = "Pods/Target Support Files/Pods-Chitra Vichitra/Pods-Chitra Vichitra.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -106,6 +108,7 @@
 		2BEBA2FD1EC5A9C70037DD56 /* Chitra Vichitra */ = {
 			isa = PBXGroup;
 			children = (
+				DE33E72E1ED35D1C0005EB0E /* GoogleService-Info.plist */,
 				2BA05B621ECD81A600DEB0F9 /* assets */,
 				2BA05B651ECD81A600DEB0F9 /* files */,
 				2BA05B5E1ECD72B500DEB0F9 /* CustomView */,
@@ -227,6 +230,7 @@
 				2BEBA3091EC5A9C70037DD56 /* Main.storyboard in Resources */,
 				2BA05B671ECD81A600DEB0F9 /* mask.png in Resources */,
 				2BA05B681ECD81A600DEB0F9 /* WID-small.jpg in Resources */,
+				DE33E72F1ED35D1C0005EB0E /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,7 +249,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		50B7FD2EC562F6613F2DD1A0 /* [CP] Embed Pods Frameworks */ = {

@@ -118,6 +118,13 @@
         [videoCamera removeAllTargets];
         [videoCamera addTarget:selectedfilter];
         GPUImageView *filterView = (GPUImageView *)self.filterView;
+        if (videoCamera.cameraPosition == AVCaptureDevicePositionFront)
+        {
+            [self.filterView setInputRotation:kGPUImageFlipHorizonal atIndex:0];
+        }
+        else{
+            [self.filterView setInputRotation:kGPUImageNoRotation atIndex:0];
+        }
         [selectedfilter addTarget:filterView];
     }
 }
@@ -170,8 +177,9 @@
     self.imagePicker.allowsEditing = NO;
     
     self.imagePicker.delegate = self;
-    
+    self.filterSettingsSlider.hidden = true;
     [self presentViewController:self.imagePicker animated:YES completion:nil];
+    
 
 }
 - (IBAction)backAction:(id)sender {
@@ -340,7 +348,7 @@
             [self.filterSettingsSlider setValue:1.0];
             [self.filterSettingsSlider setMinimumValue:0.0];
             [self.filterSettingsSlider setMaximumValue:1.0];
-            
+
             filter = [[GPUImageSepiaFilter alloc] init];
         }; break;
         case GPUIMAGE_PIXELLATE:
