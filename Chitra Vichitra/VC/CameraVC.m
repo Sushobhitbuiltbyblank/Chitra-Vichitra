@@ -28,9 +28,14 @@
 @property (weak, nonatomic) IBOutlet GPUImageView *filterView;
 @property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bVBottomC;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *ACBVBottomC;
 @property (nonatomic, strong) UIImagePickerController* imagePicker;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *galleryBtn;
 @property (weak, nonatomic) IBOutlet GPUImageView *otherView;
+@property (weak, nonatomic) IBOutlet UIView *afterClickbottomView;
+@property (weak, nonatomic) IBOutlet UIButton *backBtn;
+@property (weak, nonatomic) IBOutlet UIButton *downloadBtn;
+@property (weak, nonatomic) IBOutlet UIButton *settingBtn;
 
 @end
 
@@ -136,6 +141,7 @@
          filter = [[GPUImageFilter alloc]init];
          [self changeFilter:filter];
          self.filterSettingsSlider.hidden = YES;
+         [self showHideAfterClickView];
 //         [self performSegueWithIdentifier:@"gotoCaptureImageVC" sender:sender];
 //         UIImageWriteToSavedPhotosAlbum(processedImage, self, nil, nil);
      }];
@@ -168,6 +174,20 @@
     [self presentViewController:self.imagePicker animated:YES completion:nil];
 
 }
+- (IBAction)backAction:(id)sender {
+    [self showHideAfterClickView];
+    self.filterView.hidden = NO;
+    filter = [[GPUImageFilter alloc]init];
+    captureImage = origonalImage;
+    [self changeFilter:filter];
+    self.filterSettingsSlider.hidden = true;
+}
+- (IBAction)saveAction:(id)sender {
+}
+- (IBAction)settingtwoAction:(id)sender {
+    [self showHideAfterClickView];
+    [self showHideview];
+}
 
 -(void)showHideview{
     [self.view layoutIfNeeded];
@@ -184,7 +204,21 @@
         }];
     }
 }
-
+-(void)showHideAfterClickView{
+    [self.view layoutIfNeeded];
+    if (self.ACBVBottomC.constant == 0){
+        self.ACBVBottomC.constant = -100;
+        [UIView animateWithDuration:.5 animations:^{
+            [self.view layoutIfNeeded]; // Called on parent view
+        }];
+    }
+    else{
+        self.ACBVBottomC.constant = 0;
+        [UIView animateWithDuration:.5 animations:^{
+            [self.view layoutIfNeeded]; // Called on parent view
+        }];
+    }
+}
 
 #pragma mark - CollectionView method
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
@@ -197,6 +231,7 @@
     FrameCVCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifer forIndexPath:indexPath];
     switch (indexPath.row)
     {
+        case GPUIMAGE_NONE:cell.filterName.text = @"Original"; break;
         case GPUIMAGE_SATURATION: cell.filterName.text = @"Saturation"; break;
         case GPUIMAGE_CONTRAST: cell.filterName.text = @"Contrast"; break;
         case GPUIMAGE_BRIGHTNESS: cell.filterName.text = @"Brightness"; break;
@@ -213,7 +248,6 @@
         case GPUIMAGE_TONECURVE: cell.filterName.text = @"Tone curve"; break;
         case GPUIMAGE_HIGHLIGHTSHADOW: cell.filterName.text = @"Highlights and shadows"; break;
         case GPUIMAGE_HAZE: cell.filterName.text = @"Haze"; break;
-        case GPUIMAGE_HISTOGRAM_EQUALIZATION: cell.filterName.text = @"Histogram Equalization"; break;
         case GPUIMAGE_THRESHOLD: cell.filterName.text = @"Threshold"; break;
         case GPUIMAGE_ADAPTIVETHRESHOLD: cell.filterName.text = @"Adaptive threshold"; break;
         case GPUIMAGE_AVERAGELUMINANCETHRESHOLD: cell.filterName.text = @"Average luminance threshold"; break;
@@ -284,9 +318,20 @@
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     [self showHideview];
+    if (self.filterView.isHidden)
+    {
+        [self showHideAfterClickView];
+    }
     filterType = (GPUImageShowcaseFilterType) indexPath.row;
     switch (indexPath.row)
     {
+        case GPUIMAGE_NONE:
+        {
+            filter = [[GPUImageFilter alloc] init];
+            captureImage = origonalImage;
+            [self changeFilter:filter];
+
+        }; break;
         case GPUIMAGE_SEPIA:
         {
             self.title = @"Sepia Tone";
@@ -579,17 +624,6 @@
             [self.filterSettingsSlider setValue:0.2];
             
             filter = [[GPUImageHazeFilter alloc] init];
-        }; break;
-        case GPUIMAGE_HISTOGRAM_EQUALIZATION:
-        {
-            self.title = @"Histogram Equalization";
-            self.filterSettingsSlider.hidden = NO;
-            
-            [self.filterSettingsSlider setMinimumValue:4.0];
-            [self.filterSettingsSlider setMaximumValue:32.0];
-            [self.filterSettingsSlider setValue:16.0];
-            
-            filter = [[GPUImageHistogramEqualizationFilter alloc] initWithHistogramType:kGPUImageHistogramLuminance];
         }; break;
         case GPUIMAGE_THRESHOLD:
         {
@@ -1179,7 +1213,6 @@
         case GPUIMAGE_HUE: [(GPUImageHueFilter *)filter setHue:[(UISlider *)sender value]]; break;
         case GPUIMAGE_WHITEBALANCE: [(GPUImageWhiteBalanceFilter *)filter setTemperature:[(UISlider *)sender value]]; break;
         case GPUIMAGE_SHARPEN: [(GPUImageSharpenFilter *)filter setSharpness:[(UISlider *)sender value]]; break;
-        case GPUIMAGE_HISTOGRAM_EQUALIZATION: [(GPUImageHistogramEqualizationFilter *)filter setDownsamplingFactor:round([(UISlider *)sender value])]; break;
         case GPUIMAGE_UNSHARPMASK: [(GPUImageUnsharpMaskFilter *)filter setIntensity:[(UISlider *)sender value]]; break;
             //        case GPUIMAGE_UNSHARPMASK: [(GPUImageUnsharpMaskFilter *)filter setBlurSize:[(UISlider *)sender value]]; break;
         case GPUIMAGE_GAMMA: [(GPUImageGammaFilter *)filter setGamma:[(UISlider *)sender value]]; break;
