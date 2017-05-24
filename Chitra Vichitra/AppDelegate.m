@@ -17,7 +17,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    // Use Firebase library to configure APIs.
     [FIRApp configure];
+    // Initialize the Google Mobile Ads SDK.
+    [GADMobileAds configureWithApplicationID:@"ca-app-pub-6491982512648467~8669083636"];
     return YES;
 }
 

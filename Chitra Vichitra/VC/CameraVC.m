@@ -12,6 +12,8 @@
 #import "FrameCVCell.h"
 #import "CaptureImageVC.h"
 #import <MobileCoreServices/MobileCoreServices.h>
+@import GoogleMobileAds;
+
 @interface CameraVC ()<UICollectionViewDelegate,UICollectionViewDataSource,UINavigationControllerDelegate, UIImagePickerControllerDelegate>{
     GPUImageStillCamera *videoCamera;
     GPUImageOutput<GPUImageInput> *filter;
@@ -36,6 +38,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *backBtn;
 @property (weak, nonatomic) IBOutlet UIButton *downloadBtn;
 @property (weak, nonatomic) IBOutlet UIButton *settingBtn;
+@property(nonatomic, strong) GADBannerView *bannerView;
+@property (weak, nonatomic) IBOutlet UIView *adView;
 
 @end
 
@@ -46,6 +50,17 @@
     [self setupFilter];
     UITapGestureRecognizer *tgr = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(cameraViewTapAction:)];
     [self.filterView addGestureRecognizer:tgr];
+    
+    //setup banner ad
+    self.bannerView = [[GADBannerView alloc]
+                       initWithAdSize:kGADAdSizeSmartBannerPortrait];
+    [self.adView addSubview:self.bannerView];
+    self.bannerView.adUnitID = @"ca-app-pub-3940256099942544/2934735716";
+    self.bannerView.rootViewController = self;
+    [self.bannerView loadRequest:[GADRequest request]];
+    GADRequest *request = [GADRequest request];
+    request.testDevices = @[ kGADSimulatorID,                       // All simulators
+                             @"efac8914d02a3f4ac9dc877b78ad7749" ]; // Sample device ID
     // Do any additional setup after loading the view.
 }
 

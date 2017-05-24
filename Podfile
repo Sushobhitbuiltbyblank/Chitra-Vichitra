@@ -6,6 +6,7 @@ target 'Chitra Vichitra' do
   # use_frameworks!
 	pod ‘GPUImage’
     pod 'Firebase/Core'
+	pod 'Firebase/AdMob'
   # Pods for Chitra Vichitra
 
 end
