@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -32,7 +32,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <slider hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="K9F-n7-P63">
-                                <rect key="frame" x="-2" y="517" width="379" height="31"/>
+                                <rect key="frame" x="-2" y="497" width="379" height="31"/>
                                 <color key="minimumTrackTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="maximumTrackTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -212,9 +212,20 @@
                                     <constraint firstItem="xdh-bT-SvK" firstAttribute="width" secondItem="siM-uo-fGB" secondAttribute="width" id="xTR-hn-uw6"/>
                                 </constraints>
                             </view>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NRx-xh-xZt">
+                                <rect key="frame" x="-2" y="637" width="377" height="30"/>
+                                <color key="backgroundColor" red="0.8862745098" green="0.090196078430000007" blue="0.070588235289999995" alpha="0.25230094178082191" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="UNDO">
+                                    <color key="titleColor" white="1" alpha="0.70315175513698636" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="undoBtnAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4rm-vj-jyq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="NRx-xh-xZt" secondAttribute="trailing" constant="-16" id="01o-IH-vqk"/>
                             <constraint firstItem="K9F-n7-P63" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="1ec-km-6SY"/>
                             <constraint firstItem="QUw-ZD-JMG" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="26D-0c-gzd"/>
                             <constraint firstAttribute="trailingMargin" secondItem="1ha-Vj-hHy" secondAttribute="trailing" constant="-18" id="5WS-kg-E1J"/>
@@ -222,10 +233,12 @@
                             <constraint firstAttribute="trailing" secondItem="K9F-n7-P63" secondAttribute="trailing" id="7Yg-Jw-NV1"/>
                             <constraint firstAttribute="trailing" secondItem="QUw-ZD-JMG" secondAttribute="trailing" id="7lC-lj-YZE"/>
                             <constraint firstItem="n07-9N-eiX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="DvC-mp-37R"/>
-                            <constraint firstItem="3M8-ll-LkP" firstAttribute="top" secondItem="K9F-n7-P63" secondAttribute="bottom" constant="20" id="FhM-vI-yzG"/>
+                            <constraint firstItem="3M8-ll-LkP" firstAttribute="top" secondItem="K9F-n7-P63" secondAttribute="bottom" constant="40" id="FhM-vI-yzG"/>
                             <constraint firstAttribute="trailing" secondItem="n07-9N-eiX" secondAttribute="trailing" id="Gai-yC-w8m"/>
                             <constraint firstItem="1ha-Vj-hHy" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-18" id="IlO-MZ-ud6"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="3M8-ll-LkP" secondAttribute="bottom" id="KBT-eb-DGe"/>
+                            <constraint firstItem="NRx-xh-xZt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-18" id="LdX-GF-h5h"/>
+                            <constraint firstItem="mAm-KP-zEb" firstAttribute="top" secondItem="NRx-xh-xZt" secondAttribute="bottom" id="LjI-A0-p1I"/>
                             <constraint firstItem="QUw-ZD-JMG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="NOG-sg-XxY"/>
                             <constraint firstItem="DDo-h9-RDd" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Oul-yA-10d"/>
                             <constraint firstAttribute="trailing" secondItem="6FF-bN-D8Z" secondAttribute="trailing" id="bP3-Gy-1q0"/>
@@ -256,6 +269,7 @@
                         <outlet property="galleryBtn" destination="sc8-lh-loT" id="oeE-4t-GWn"/>
                         <outlet property="otherView" destination="DDo-h9-RDd" id="4bj-2s-c8I"/>
                         <outlet property="settingBtn" destination="vs6-Cf-37r" id="omJ-fh-5Bu"/>
+                        <outlet property="undoBtn" destination="NRx-xh-xZt" id="ESQ-1t-ff5"/>
                         <segue destination="0Ef-bG-IQI" kind="show" identifier="gotoCaptureImageVC" id="SR4-yZ-jZ3"/>
                     </connections>
                 </viewController>
