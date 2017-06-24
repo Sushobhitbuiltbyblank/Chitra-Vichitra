@@ -7,9 +7,13 @@
 //
 
 #import "CaptureImageVC.h"
+#import <MessageUI/MFMailComposeViewController.h>
+#import <Social/Social.h>
+#import <MobileCoreServices/MobileCoreServices.h>
 
 @interface CaptureImageVC ()
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UIButton *shareBtn;
 @end
 
 @implementation CaptureImageVC
@@ -17,12 +21,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.imageView setImage:self.image];
+    [self setUpActionSheet];
     // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)setUpActionSheet {
+    
+}
+
+- (IBAction)shareBtnAction:(id)sender {
+    
 }
 
 /*

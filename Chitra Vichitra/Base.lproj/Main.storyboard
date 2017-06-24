@@ -290,10 +290,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KvW-Hb-mGv">
-                                <rect key="frame" x="0.0" y="20" width="375" height="597"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nZk-YP-OQA">
                                 <rect key="frame" x="0.0" y="567" width="375" height="100"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HzM-p3-7rh">
+                                        <rect key="frame" x="164" y="35" width="46" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="shareBtnAction:" destination="0Ef-bG-IQI" eventType="touchUpInside" id="yHH-Qc-lD3"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="Y9E-E9-P5v"/>
@@ -307,13 +317,14 @@
                             <constraint firstAttribute="trailing" secondItem="KvW-Hb-mGv" secondAttribute="trailing" id="8Kj-rd-6sL"/>
                             <constraint firstAttribute="trailing" secondItem="nZk-YP-OQA" secondAttribute="trailing" id="DVd-IS-ATo"/>
                             <constraint firstItem="KvW-Hb-mGv" firstAttribute="leading" secondItem="msg-T8-ar3" secondAttribute="leading" id="Vhv-fO-Eeu"/>
-                            <constraint firstItem="zKS-oq-HZf" firstAttribute="top" secondItem="KvW-Hb-mGv" secondAttribute="bottom" constant="50" id="aFl-fE-TGC"/>
+                            <constraint firstItem="zKS-oq-HZf" firstAttribute="top" secondItem="KvW-Hb-mGv" secondAttribute="bottom" id="aFl-fE-TGC"/>
                             <constraint firstItem="zKS-oq-HZf" firstAttribute="top" secondItem="nZk-YP-OQA" secondAttribute="bottom" id="dFl-P3-trr"/>
                             <constraint firstItem="KvW-Hb-mGv" firstAttribute="top" secondItem="Clw-8e-Hwh" secondAttribute="bottom" id="swt-VI-BsF"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="imageView" destination="KvW-Hb-mGv" id="hgy-M8-HDT"/>
+                        <outlet property="shareBtn" destination="HzM-p3-7rh" id="BVj-C1-MCH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jmp-t5-M9g" userLabel="First Responder" sceneMemberID="firstResponder"/>

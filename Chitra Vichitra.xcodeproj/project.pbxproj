@@ -19,7 +19,6 @@
 		2BEBA30B1EC5A9C70037DD56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BEBA30A1EC5A9C70037DD56 /* Assets.xcassets */; };
 		2BEBA30E1EC5A9C70037DD56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BEBA30C1EC5A9C70037DD56 /* LaunchScreen.storyboard */; };
 		2BEBA31D1EC5AA8A0037DD56 /* CameraVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BEBA31A1EC5AA8A0037DD56 /* CameraVC.m */; };
-		2BEBA31E1EC5AA8A0037DD56 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BEBA31C1EC5AA8A0037DD56 /* ViewController.m */; };
 		DE33E72F1ED35D1C0005EB0E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE33E72E1ED35D1C0005EB0E /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -41,8 +40,6 @@
 		2BEBA30F1EC5A9C70037DD56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2BEBA3191EC5AA8A0037DD56 /* CameraVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraVC.h; sourceTree = "<group>"; };
 		2BEBA31A1EC5AA8A0037DD56 /* CameraVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraVC.m; sourceTree = "<group>"; };
-		2BEBA31B1EC5AA8A0037DD56 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		2BEBA31C1EC5AA8A0037DD56 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		90A2BD3574879A62249E1386 /* libPods-Chitra Vichitra.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Chitra Vichitra.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B084A5759235D805FDE3C279 /* Pods-Chitra Vichitra.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chitra Vichitra.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Chitra Vichitra/Pods-Chitra Vichitra.debug.xcconfig"; sourceTree = "<group>"; };
 		DE33E72E1ED35D1C0005EB0E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "Google File/GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -137,8 +134,6 @@
 			children = (
 				2BEBA3191EC5AA8A0037DD56 /* CameraVC.h */,
 				2BEBA31A1EC5AA8A0037DD56 /* CameraVC.m */,
-				2BEBA31B1EC5AA8A0037DD56 /* ViewController.h */,
-				2BEBA31C1EC5AA8A0037DD56 /* ViewController.m */,
 				2BA05B6B1ECDC5F700DEB0F9 /* CaptureImageVC.h */,
 				2BA05B6C1ECDC5F700DEB0F9 /* CaptureImageVC.m */,
 			);
@@ -289,7 +284,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2BEBA31E1EC5AA8A0037DD56 /* ViewController.m in Sources */,
 				2BA05B6D1ECDC5F700DEB0F9 /* CaptureImageVC.m in Sources */,
 				2BA05B611ECD73CF00DEB0F9 /* FrameCVCell.m in Sources */,
 				2BEBA3031EC5A9C70037DD56 /* AppDelegate.m in Sources */,

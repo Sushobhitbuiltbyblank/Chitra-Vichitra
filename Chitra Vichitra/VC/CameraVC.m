@@ -209,6 +209,7 @@
     [self showhideAdview];
 }
 - (IBAction)saveAction:(id)sender {
+        [self performSegueWithIdentifier:@"gotoCaptureImageVC" sender:sender];
 }
 - (IBAction)settingtwoAction:(id)sender {
     [self showHideAfterClickView];
@@ -313,7 +314,6 @@
         case GPUIMAGE_THRESHOLDEDGEDETECTION: cell.filterName.text = @"Threshold edge detection"; break;
         case GPUIMAGE_XYGRADIENT: cell.filterName.text = @"XY derivative"; break;
         case GPUIMAGE_HOUGHTRANSFORMLINEDETECTOR: cell.filterName.text = @"Hough transform line detection"; break;
-        case GPUIMAGE_BUFFER: cell.filterName.text = @"Image buffer"; break;
         case GPUIMAGE_MOTIONDETECTOR: cell.filterName.text = @"Motion detector"; break;
         case GPUIMAGE_LOWPASS: cell.filterName.text = @"Low pass"; break;
         case GPUIMAGE_HIGHPASS: cell.filterName.text = @"High pass"; break;
@@ -739,13 +739,6 @@
             [self.filterSettingsSlider setValue:1.0];
             
             filter = [[GPUImageLocalBinaryPatternFilter alloc] init];
-        }; break;
-        case GPUIMAGE_BUFFER:
-        {
-            self.title = @"Image Buffer";
-            self.filterSettingsSlider.hidden = YES;
-            
-            filter = [[GPUImageBuffer alloc] init];
         }; break;
         case GPUIMAGE_LOWPASS:
         {
