@@ -25,6 +25,7 @@
     NSString *identifer;
     UIView *touchView;
     UIImage *origonalImage;
+    UIAlertController *actionSheet;
 }
 @property (weak, nonatomic) IBOutlet UIButton *undoBtn;
 @property (weak, nonatomic) IBOutlet UISlider *filterSettingsSlider;
@@ -63,6 +64,7 @@
     request.testDevices = @[ kGADSimulatorID,                       // All simulators
                              @"efac8914d02a3f4ac9dc877b78ad7749" ]; // Sample device ID
     [self showhideAdview];
+    [self setUpActionSheet];
     // Do any additional setup after loading the view.
 }
 
@@ -209,7 +211,8 @@
     [self showhideAdview];
 }
 - (IBAction)saveAction:(id)sender {
-        [self performSegueWithIdentifier:@"gotoCaptureImageVC" sender:sender];
+    [self presentViewController:actionSheet animated:YES completion:nil];
+//        [self performSegueWithIdentifier:@"gotoCaptureImageVC" sender:sender];
 }
 - (IBAction)settingtwoAction:(id)sender {
     [self showHideAfterClickView];
@@ -1316,4 +1319,53 @@
     self.imagePicker = nil;
 }
 
+#pragma mark - Action Sheet 
+
+-(void)setUpActionSheet {
+    actionSheet = [UIAlertController
+                                alertControllerWithTitle:nil      //  Must be "nil", otherwise a blank title area will appear above our two buttons
+                                message:nil
+                                preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    UIAlertAction* button0 = [UIAlertAction
+                              actionWithTitle:@"Cancel"
+                              style:UIAlertActionStyleCancel
+                              handler:^(UIAlertAction * action)
+                              {
+                                  //  UIAlertController will automatically dismiss the view
+                              }];
+    
+    UIAlertAction* button1 = [UIAlertAction
+                              actionWithTitle:@"Save on Gallery"
+                              style:UIAlertActionStyleDefault
+                              handler:^(UIAlertAction * action)
+                              {
+                                  UIImageWriteToSavedPhotosAlbum(captureImage,
+                                                                 self, // send the message to 'self' when calling the callback
+                                                                 @selector(thisImage:hasBeenSavedInPhotoAlbumWithError:usingContextInfo:), // the selector to tell the method to call on completion
+                                                                 NULL); // you generally won't need a contextInfo here
+                              }];
+    
+    UIAlertAction* button2 = [UIAlertAction
+                              actionWithTitle:@"Share"
+                              style:UIAlertActionStyleDefault
+                              handler:^(UIAlertAction * action)
+                              {
+                                  
+                              }];
+    
+    [actionSheet addAction:button0];
+    [actionSheet addAction:button1];
+    [actionSheet addAction:button2];
+}
+
+-(void)thisImage:(UIImage *)image hasBeenSavedInPhotoAlbumWithError:(NSError *)error usingContextInfo:(void*)ctxInfo {
+    if (error) {
+        // Do anything needed to handle the error or display it to the user
+    } else {
+        printf("image saved");
+        // .... do anything you want here to handle
+        // .... when the image has been saved in the photo album
+    }
+}
 @end
