@@ -13,6 +13,7 @@
 		2BA05B681ECD81A600DEB0F9 /* WID-small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2BA05B641ECD81A600DEB0F9 /* WID-small.jpg */; };
 		2BA05B691ECD81A600DEB0F9 /* CustomFilter.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 2BA05B661ECD81A600DEB0F9 /* CustomFilter.fsh */; };
 		2BA05B6D1ECDC5F700DEB0F9 /* CaptureImageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA05B6C1ECDC5F700DEB0F9 /* CaptureImageVC.m */; };
+		2BC886A41F135A8D00E3E9F6 /* ShareVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BC886A31F135A8D00E3E9F6 /* ShareVC.m */; };
 		2BEBA3001EC5A9C70037DD56 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BEBA2FF1EC5A9C70037DD56 /* main.m */; };
 		2BEBA3031EC5A9C70037DD56 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BEBA3021EC5A9C70037DD56 /* AppDelegate.m */; };
 		2BEBA3091EC5A9C70037DD56 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BEBA3071EC5A9C70037DD56 /* Main.storyboard */; };
@@ -30,6 +31,8 @@
 		2BA05B661ECD81A600DEB0F9 /* CustomFilter.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = CustomFilter.fsh; sourceTree = "<group>"; };
 		2BA05B6B1ECDC5F700DEB0F9 /* CaptureImageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaptureImageVC.h; sourceTree = "<group>"; };
 		2BA05B6C1ECDC5F700DEB0F9 /* CaptureImageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaptureImageVC.m; sourceTree = "<group>"; };
+		2BC886A21F135A8D00E3E9F6 /* ShareVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareVC.h; sourceTree = "<group>"; };
+		2BC886A31F135A8D00E3E9F6 /* ShareVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareVC.m; sourceTree = "<group>"; };
 		2BEBA2FB1EC5A9C70037DD56 /* Chitra Vichitra.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Chitra Vichitra.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BEBA2FF1EC5A9C70037DD56 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2BEBA3011EC5A9C70037DD56 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -136,6 +139,8 @@
 				2BEBA31A1EC5AA8A0037DD56 /* CameraVC.m */,
 				2BA05B6B1ECDC5F700DEB0F9 /* CaptureImageVC.h */,
 				2BA05B6C1ECDC5F700DEB0F9 /* CaptureImageVC.m */,
+				2BC886A21F135A8D00E3E9F6 /* ShareVC.h */,
+				2BC886A31F135A8D00E3E9F6 /* ShareVC.m */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -286,6 +291,7 @@
 			files = (
 				2BA05B6D1ECDC5F700DEB0F9 /* CaptureImageVC.m in Sources */,
 				2BA05B611ECD73CF00DEB0F9 /* FrameCVCell.m in Sources */,
+				2BC886A41F135A8D00E3E9F6 /* ShareVC.m in Sources */,
 				2BEBA3031EC5A9C70037DD56 /* AppDelegate.m in Sources */,
 				2BEBA31D1EC5AA8A0037DD56 /* CameraVC.m in Sources */,
 				2BEBA3001EC5A9C70037DD56 /* main.m in Sources */,

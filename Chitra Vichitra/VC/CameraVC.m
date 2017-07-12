@@ -12,6 +12,7 @@
 #import "FrameCVCell.h"
 #import "CaptureImageVC.h"
 #import <MobileCoreServices/MobileCoreServices.h>
+#import "ShareVC.h"
 @import GoogleMobileAds;
 
 @interface CameraVC ()<UICollectionViewDelegate,UICollectionViewDataSource,UINavigationControllerDelegate, UIImagePickerControllerDelegate>{
@@ -1268,11 +1269,11 @@
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([[segue identifier] isEqualToString:@"gotoCaptureImageVC"])
+    if ([[segue identifier] isEqualToString:@"gotoShareVC"])
     {
         // Get reference to the destination view controller
-        CaptureImageVC *vc = [segue destinationViewController];
-        vc.image = captureImage;
+        ShareVC *vc = [segue destinationViewController];
+        vc.image = [filter imageByFilteringImage:origonalImage];
         // Pass any objects to the view controller here, like...
         
     }
@@ -1315,6 +1316,9 @@
     self.filterView.hidden = YES;
     filter = [[GPUImageFilter alloc]init];
     [self changeFilter:filter];
+    self.filterSettingsSlider.hidden = YES;
+    [self showHideAfterClickView];
+    [self showhideAdview];
     [self.imagePicker dismissViewControllerAnimated:YES completion:nil];
     self.imagePicker = nil;
 }
@@ -1340,7 +1344,7 @@
                               style:UIAlertActionStyleDefault
                               handler:^(UIAlertAction * action)
                               {
-                                  UIImageWriteToSavedPhotosAlbum(captureImage,
+                                  UIImageWriteToSavedPhotosAlbum([filter imageByFilteringImage:origonalImage],
                                                                  self, // send the message to 'self' when calling the callback
                                                                  @selector(thisImage:hasBeenSavedInPhotoAlbumWithError:usingContextInfo:), // the selector to tell the method to call on completion
                                                                  NULL); // you generally won't need a contextInfo here
@@ -1351,7 +1355,7 @@
                               style:UIAlertActionStyleDefault
                               handler:^(UIAlertAction * action)
                               {
-                                  
+                                  [self performSegueWithIdentifier:@"gotoShareVC" sender:action];
                               }];
     
     [actionSheet addAction:button0];
