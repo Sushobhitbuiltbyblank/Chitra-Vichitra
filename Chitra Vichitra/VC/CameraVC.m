@@ -203,14 +203,8 @@
 
 }
 - (IBAction)backAction:(id)sender {
-    [self showHideAfterClickView];
-    self.filterView.hidden = NO;
-    filter = [[GPUImageFilter alloc]init];
-    captureImage = origonalImage;
-    [self changeFilter:filter];
-    self.filterSettingsSlider.hidden = true;
-    [self showhideAdview];
-}
+    [self goBack];
+   }
 - (IBAction)saveAction:(id)sender {
     [self presentViewController:actionSheet animated:YES completion:nil];
 //        [self performSegueWithIdentifier:@"gotoCaptureImageVC" sender:sender];
@@ -226,6 +220,16 @@
     [self changeFilter:filter];
 }
 
+-(void)goBack{
+    [self showHideAfterClickView];
+    self.filterView.hidden = NO;
+    filter = [[GPUImageFilter alloc]init];
+    captureImage = origonalImage;
+    [self changeFilter:filter];
+    self.filterSettingsSlider.hidden = true;
+    [self showhideAdview];
+
+}
 -(void)showHideview{
     [self.view layoutIfNeeded];
     if (self.bVBottomC.constant == 0){
@@ -1348,6 +1352,7 @@
                                                                  self, // send the message to 'self' when calling the callback
                                                                  @selector(thisImage:hasBeenSavedInPhotoAlbumWithError:usingContextInfo:), // the selector to tell the method to call on completion
                                                                  NULL); // you generally won't need a contextInfo here
+                                  [self goBack];
                               }];
     
     UIAlertAction* button2 = [UIAlertAction
